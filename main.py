@@ -20,6 +20,7 @@ def get_maclaurin_expansion_of_e_to_x_till_n_terms(x,n):
 def get_true_precent_relative_error(true_value, computed_value):
     return (abs(true_value - computed_value) / true_value) * 100
 #################################################
+# Iterates over the values of the first n terms e^x's macluarin expansion until it reaches an acceptable true precent relative error and then returns the number of terms it took to reach that acceptabe error  
 def get_number_of_terms__of_e_to_x_mac_expansion(x,acceptable_error):
     e_to_x = (np.e**x)
     i = 0
@@ -28,14 +29,15 @@ def get_number_of_terms__of_e_to_x_mac_expansion(x,acceptable_error):
             return i
         i += 1
 ####################################################
+# testing functions
 def main():
     ## Machine epsilon manually
     machine_epsilon = get_machine_epsilon()
     print(machine_epsilon)
-    ## Machine epsilon from np
-    # Machine Epsilon from numpy
+    ## Machine Epsilon from numpy
     machine_epsilon = np.finfo(np.float64).eps
-    print(machine_epsilon)  
+    print(machine_epsilon) 
+    #### 
     e_to_half_test = get_maclaurin_expansion_of_e_to_x_till_n_terms(0.5,5)
     print(e_to_half_test)
     e_to_x = (np.e**0.5)
